@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: #f3f8ff;
+}
+
+/* nav */
+.nav-wrap {
+  position: fixed;
+  top: 36px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  gap: 80px;
+  z-index: 2;
+}
+
+.nav-button,
+.nav-a {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+}
+
+.nav-button img,
+.nav-a img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* banner */
+.index-banner {
+  background-image: url('./images/bannerBg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+.banner-linear-overlay {
+  /* background: linear-gradient(180deg, rgba(243, 248, 255, 0.5) 0%, rgba(73, 16, 139, 0.5) 100%); */
+  background-image: url('./images/bannerLinearBg.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-repeat: round;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 550px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 0 50px 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.blur-overlay-title {
+  margin-bottom: 70px;
+  line-height: 77px;
+}
+
+.blur-overlay-title h2 {
+  font-size: 64px;
+  font-weight: 700;
+  width: 334px;
+  margin-bottom: 17px;
+}
+
+.blur-overlay-title p {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 19px;
+}
+
+.blur-overlay-button {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blur-overlay-button h1 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38px;
+  margin: 0;
+}
+
+.blur-overlay-button button {
+  background-color: transparent;
+  border: 3px solid #fff;
+  border-radius: 0;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  width: 157px;
+  height: 50px;
+  font-weight: 400;
+  box-shadow: 4px 4px 4px 0px #00000040;
+}
+
+/* footer */
+.chat-button {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  width: 83px;
+  height: 83px;
+  background: transparent;
+  border: none;
+}
