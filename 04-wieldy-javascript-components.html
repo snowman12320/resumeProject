@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <script src="js/time_count_begin.js"></script>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>wieldy JavaScript - components</title>
+  </head>
+  
+  <body>
+    <div id="app01"></div>
+    <which-part type="header"></which-part>
+    <which-part type="navigation"></which-part>
+    <which-part type="main"></which-part>
+    <which-part type="footer"></which-part>
+
+    <script>
+      class WhichPart extends HTMLElement
+      {
+        connectedCallback()
+        {
+          var choice = this.getAttribute('type');
+
+          this.innerHTML =
+            choice == 'header' ?
+              `<div id="header" style="background-color: RoyalBlue; height: 100px; margin-bottom: 2px"></div>` :
+            choice == 'navigation' ?
+              `<div id="navigation" style="background-color: YellowGreen; height: 70px; margin-bottom: 2px"></div>` :
+            choice == 'main' ?
+              `<div id="main" style="background-color: GoldenRod; height: 400px; margin-bottom: 2px"></div>` :
+            choice == 'footer' ?
+              `<div id="footer" style="background-color: ForestGreen; height: 90px"></div>` : '';
+        }
+      }
+
+      customElements.define("which-part", WhichPart);
+    </script>
+
+  </body>
+
+  <script src="js/time_count_end.js"></script>
+</html>
