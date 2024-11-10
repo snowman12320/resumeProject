@@ -5,7 +5,9 @@ aboutMeIcon.addEventListener('click', function() {
     if (this.src.includes('aboutMeIconbBlue.png')) {
         this.src = './images/aboutMeIcon.png';
     } else {
-        this.src = './images/aboutMeIconbBlue.png';
+        if(!window.location.href.includes('resume')){
+            this.src = './images/aboutMeIconbBlue.png';
+        }
     }
     
     if (aboutMeMenu.style.display === 'none' || !aboutMeMenu.style.display) {
