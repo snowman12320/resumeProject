@@ -3,6 +3,79 @@
   <head>
     <meta charset="utf-8" />
     <title>resume</title>
+
+    <style>
+      .menu-container {
+        border: 2px solid #8b00ff;
+        max-width: 600px;
+        margin: 0 auto;
+        position: absolute;
+        top: 150%;
+        background: #fff;
+        z-index: 10;
+      }
+      .header {
+        background: #f0f0ff;
+        padding: 10px;
+        border-bottom: 1px solid #8b00ff;
+      }
+      .menu-content {
+        display: flex;
+      }
+      .categories {
+        width: 200px;
+        border-right: 1px solid #8b00ff;
+      }
+      .category {
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .category:hover {
+        background-color: #f0f0ff;
+      }
+      .category.active {
+        background-color: #8b00ff;
+        color: white;
+      }
+      .subcategories {
+        flex-grow: 1;
+        padding: 10px;
+      }
+      .subcategory {
+        padding: 8px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .subcategory-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+      .subcategory-content {
+        padding-left: 20px;
+        display: none;
+      }
+      .subcategory-content.show {
+        display: block;
+      }
+      .footer {
+        padding: 10px;
+        background: #f0f0ff;
+        border-top: 1px solid #8b00ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .close-button {
+        background: none;
+        border: none;
+        color: #8b00ff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+    </style>
   </head>
 
   <body
@@ -15,6 +88,7 @@
         rgba(0, 0, 0, 0.8) 34.26%,
         rgba(73, 16, 139, 0.8) 69.33%
       );
+      background-size: 200% 200%;
     "
   >
     <which-part type="nav"></which-part>
@@ -389,6 +463,97 @@
               >
             </button>
           </div>
+
+          <div style="display: flex; align-items: center; font-family: Arial, sans-serif">
+            <label
+              for="custom-dropdown"
+              style="font-size: 16px; color: #7f1ac6; margin-right: 8px"
+              >證照名稱</label
+            >
+            <div
+              id="custom-dropdown"
+              style="position: relative; display: inline-block; width: 200px"
+            >
+              <div
+                id="dropdown-button"
+                style="
+                  border: 1px solid #7f1ac6;
+                  border-radius: 4px;
+                  padding: 8px;
+                  color: #7f1ac6;
+                  font-size: 16px;
+                  cursor: pointer;
+                "
+              >
+                請選擇
+                <span
+                  style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%)"
+                >
+                  ▼
+                </span>
+              </div>
+
+              <div class="menu-container">
+                <div class="header">證照類別</div>
+                <div class="menu-content">
+                  <div class="categories">
+                    <div class="category active">電機資訊網路類</div>
+                    <div class="category">營建土木類</div>
+                    <div class="category">財金/保險/不動產類</div>
+                    <div class="category">機械操作/修護類</div>
+                  </div>
+                  <div class="subcategories">
+                    <div class="subcategory">
+                      <div class="subcategory-header">
+                        Adobe
+                        <span>▼</span>
+                      </div>
+                      <div class="subcategory-content">
+                        <label><input type="checkbox" /> Adobe Photoshop</label><br />
+                        <label><input type="checkbox" /> Adobe Illustrator</label><br />
+                        <label><input type="checkbox" /> Adobe InDesign</label>
+                      </div>
+                    </div>
+                    <div class="subcategory">
+                      <div class="subcategory-header">
+                        Apple
+                        <span>▼</span>
+                      </div>
+                      <div class="subcategory-content">
+                        <label><input type="checkbox" /> Apple Certified</label><br />
+                        <label><input type="checkbox" /> iOS Development</label>
+                      </div>
+                    </div>
+                    <div class="subcategory">
+                      <div class="subcategory-header">
+                        Avaya Inc
+                        <span>▼</span>
+                      </div>
+                      <div class="subcategory-content">
+                        <label><input type="checkbox" /> Avaya Certified</label><br />
+                        <label><input type="checkbox" /> Avaya Professional</label>
+                      </div>
+                    </div>
+                    <div class="subcategory">
+                      <div class="subcategory-header">
+                        BEA System
+                        <span>▼</span>
+                      </div>
+                      <div class="subcategory-content">
+                        <label><input type="checkbox" /> BEA WebLogic</label><br />
+                        <label><input type="checkbox" /> BEA Portal</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer">
+                  <span>清除條件/品</span>
+                  <button class="close-button">關閉 ✕</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div
             style="
               display: flex;
@@ -807,5 +972,34 @@
     </script>
 
     <script src="./js/nav.js"></script>
+    <script>
+      document.querySelectorAll('.category').forEach(category => {
+        category.addEventListener('click', () => {
+          document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+          category.classList.add('active');
+        });
+      });
+
+      document.querySelectorAll('.subcategory-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const arrow = header.querySelector('span');
+          content.classList.toggle('show');
+          arrow.textContent = content.classList.contains('show') ? '▲' : '▼';
+        });
+      });
+
+      document.querySelector('.close-button').addEventListener('click', () => {
+        document.querySelector('.menu-container').style.display = 'none';
+      });
+
+      document.querySelector('#dropdown-button').addEventListener('click', () => {
+        if (document.querySelector('.menu-container').style.display === 'none') {
+          document.querySelector('.menu-container').style.display = 'block';
+        } else {
+          document.querySelector('.menu-container').style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
