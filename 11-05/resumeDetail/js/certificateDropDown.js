@@ -1,16 +1,12 @@
 const SELECTORS = {
-  category: '.category',
+  category: '.category', 
   subcategories: '.subcategories',
   subcategoryHeader: '.subcategory-header',
   menuContainer: '.menu-container',
-  dropdownButton: '#dropdown-button',
-  closeButton: '.close-button'
+  dropdownButton: '.dropdown-button',
+  closeButton: '.close-button',
 };
-
-const CLASSES = {
-  active: 'active',
-  show: 'show'
-};
+const appendStyle = document.createElement('style');
 
 function initializeDropdown() {
   try {
@@ -31,9 +27,12 @@ function initializeDropdown() {
 }
 
 function handleCategoryClick(selectedCategory) {
-  document.querySelectorAll(SELECTORS.category)
-    .forEach(c => c.classList.remove(CLASSES.active));
-  selectedCategory.classList.add(CLASSES.active);
+  document.querySelectorAll(SELECTORS.category).forEach(c => {
+    c.style.backgroundColor = '';
+    c.style.color = '';
+  });
+  selectedCategory.style.backgroundColor = '#7e30e1';
+  selectedCategory.style.color = 'white';
 
   const targetCategory = selectedCategory.dataset.category;
   document.querySelectorAll(SELECTORS.subcategories).forEach(header => {
@@ -43,7 +42,7 @@ function handleCategoryClick(selectedCategory) {
     if (!isVisible) {
       const subcategoryHeaders = header.querySelectorAll(SELECTORS.subcategoryHeader);
       subcategoryHeaders.forEach(subHeader => {
-        subHeader.nextElementSibling.classList.remove(CLASSES.show);
+        subHeader.nextElementSibling.style.display = 'none';
         subHeader.querySelector('span').textContent = '▼';
       });
     }
@@ -53,8 +52,8 @@ function handleCategoryClick(selectedCategory) {
 function toggleSubcategory(header) {
   const content = header.nextElementSibling;
   const arrow = header.querySelector('span');
-  content.classList.toggle(CLASSES.show);
-  arrow.textContent = content.classList.contains(CLASSES.show) ? '▲' : '▼';
+  content.style.display = content.style.display === 'none' ? 'block' : 'none';
+  arrow.textContent = content.style.display === 'block' ? '▲' : '▼';
 }
 
 function toggleMenu(show) {
@@ -66,3 +65,21 @@ function toggleMenu(show) {
 }
 
 document.addEventListener('DOMContentLoaded', initializeDropdown);
+
+function addPlaceholderStyle() {
+  appendStyle.textContent = `
+    body{
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: linear-gradient(122.22deg, rgba(0, 0, 0, 0.8) 34.26%, rgba(73, 16, 139, 0.8) 69.33%);
+      background-size: 200% 200%;
+    }
+    
+    .resume-input::placeholder {
+      color: #9777bccc;
+    }
+  `;
+  document.head.appendChild(appendStyle);
+}
+addPlaceholderStyle();
