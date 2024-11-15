@@ -1,31 +1,33 @@
-const LOCATE_SELECTORS = {
-  dropdown: '#locationDropdown',
+const POSTITON_SELECTORS = {
+  dropdown: '#positionDropdown',
   category: '.category',
-  subcategories: '.subcategories', 
+  subcategories: '.subcategories',
   menuContainer: '.menu-container',
   dropdownButton: '.dropdown-button',
   closeButton: '.close-button',
   confirmButton: '.confirm-button',
+  positionFinalConfirm: '#positionFinalConfirm',
   clearConditions: '.clear-conditions',
   continueButton: '.continue-button',
-  checkboxItem: '.checkbox-item'
+  checkboxItem: '.checkbox-item',
 };
 
-function initializeLocationDropdown() {
+function initializePositionDropdown() {
   try {
-    const dropdown = document.querySelector(LOCATE_SELECTORS.dropdown);
+    const dropdown = document.querySelector('#positionDropdown');
     if (!dropdown) return;
 
-    const dropdownButton = dropdown.querySelector(LOCATE_SELECTORS.dropdownButton);
-    const menuContainer = dropdown.querySelector(LOCATE_SELECTORS.menuContainer);
-    const closeButtons = dropdown.querySelectorAll(LOCATE_SELECTORS.closeButton);
-    const clearConditions = dropdown.querySelector(LOCATE_SELECTORS.clearConditions);
-    const confirmButton = dropdown.querySelector(LOCATE_SELECTORS.confirmButton);
-    const continueButton = dropdown.querySelector(LOCATE_SELECTORS.continueButton);
-    const checkboxes = dropdown.querySelectorAll(LOCATE_SELECTORS.checkboxItem);
-    
+    const dropdownButton = dropdown.querySelector(POSTITON_SELECTORS.dropdownButton);
+    const menuContainer = dropdown.querySelector(POSTITON_SELECTORS.menuContainer);
+    const closeButtons = dropdown.querySelectorAll(POSTITON_SELECTORS.closeButton);
+    const clearConditions = dropdown.querySelector(POSTITON_SELECTORS.clearConditions);
+    const confirmButton = dropdown.querySelector(POSTITON_SELECTORS.confirmButton);
+    const positionFinalConfirm = dropdown.querySelector(POSTITON_SELECTORS.positionFinalConfirm);
+    const continueButton = dropdown.querySelector(POSTITON_SELECTORS.continueButton);
+    const checkboxes = dropdown.querySelectorAll(POSTITON_SELECTORS.checkboxItem);
+
     dropdownButton.addEventListener('click', () => toggleMenu(menuContainer));
-    
+
     closeButtons.forEach(button => {
       button.addEventListener('click', () => {
         toggleMenu(menuContainer, false);
@@ -43,11 +45,18 @@ function initializeLocationDropdown() {
       });
     }
 
+    if (positionFinalConfirm) {
+      positionFinalConfirm.addEventListener('click', () => {
+        handleConfirm(dropdown);
+        toggleMenu(menuContainer, false);
+      });
+    }
+
     if (continueButton) {
       continueButton.addEventListener('click', () => handleContinue(dropdown));
     }
 
-    dropdown.querySelectorAll(LOCATE_SELECTORS.category).forEach(category => {
+    dropdown.querySelectorAll(POSTITON_SELECTORS.category).forEach(category => {
       category.addEventListener('click', () => handleCategoryClick(category, dropdown));
     });
 
@@ -55,46 +64,45 @@ function initializeLocationDropdown() {
       checkbox.addEventListener('change', () => {
         const isAnyChecked = Array.from(checkboxes).some(cb => cb.checked);
         confirmButton.style.display = isAnyChecked ? 'flex' : 'none';
+        positionFinalConfirm.style.display = isAnyChecked ? 'flex' : 'none';
         closeButtons.forEach(button => {
           button.style.display = isAnyChecked ? 'none' : 'flex';
         });
       });
     });
-
   } catch (error) {
-    console.error('初始化地區下拉選單時發生錯誤:', error);
+    console.error('初始化職務類別下拉選單時發生錯誤:', error);
   }
 }
 
 function handleCategoryClick(selectedCategory, dropdown) {
-  dropdown.querySelectorAll(LOCATE_SELECTORS.category).forEach(c => {
+  dropdown.querySelectorAll(POSTITON_SELECTORS.category).forEach(c => {
     c.classList.remove('active');
   });
-  
+
   selectedCategory.classList.add('active');
 
   const targetCategory = selectedCategory.dataset.category;
-  dropdown.querySelectorAll(LOCATE_SELECTORS.subcategories).forEach(subcategory => {
+  dropdown.querySelectorAll(POSTITON_SELECTORS.subcategories).forEach(subcategory => {
     subcategory.style.display = subcategory.dataset.parent === targetCategory ? 'block' : 'none';
   });
 }
 
 function toggleMenu(menuContainer, show) {
   if (!menuContainer) return;
-  
-  const currentDisplay = menuContainer.style.display;
-  menuContainer.style.display = show === undefined ? 
-    (currentDisplay === 'none' ? 'block' : 'none') : 
-    (show ? 'block' : 'none');
 
-    const nextSection = document.querySelector('.jobCategories');
-    if (nextSection) {
-      nextSection.style.display = 'none';
-    }
+  const currentDisplay = menuContainer.style.display;
+  menuContainer.style.display =
+    show === undefined ? (currentDisplay === 'none' ? 'block' : 'none') : show ? 'block' : 'none';
+
+  const nextSection = document.querySelector('.jobCategories');
+  if (nextSection) {
+    nextSection.style.display = 'none';
+  }
 }
 
 function clearAllSelections(dropdown) {
-  dropdown.querySelectorAll(LOCATE_SELECTORS.checkboxItem).forEach(checkbox => {
+  dropdown.querySelectorAll(POSTITON_SELECTORS.checkboxItem).forEach(checkbox => {
     checkbox.checked = false;
   });
 
@@ -103,7 +111,7 @@ function clearAllSelections(dropdown) {
 }
 
 function handleConfirm(dropdown) {
-  const selectedItems = Array.from(dropdown.querySelectorAll(LOCATE_SELECTORS.checkboxItem))
+  const selectedItems = Array.from(dropdown.querySelectorAll(POSTITON_SELECTORS.checkboxItem))
     .filter(checkbox => checkbox.checked)
     .map(checkbox => checkbox.parentElement.textContent.trim());
 
@@ -111,10 +119,11 @@ function handleConfirm(dropdown) {
   if (selectedItems.length > 0) {
     dropdownText.textContent = selectedItems.join(', ');
   } else {
-    dropdownText.textContent = dropdownText.getAttribute('data-default') || dropdownText.textContent;
+    dropdownText.textContent =
+      dropdownText.getAttribute('data-default') || dropdownText.textContent;
   }
 
-  const menuContainer = dropdown.querySelector(LOCATE_SELECTORS.menuContainer);
+  const menuContainer = dropdown.querySelector(POSTITON_SELECTORS.menuContainer);
   toggleMenu(menuContainer, false);
 }
 
@@ -125,5 +134,4 @@ function handleContinue(dropdown) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', initializeLocationDropdown);
-
+document.addEventListener('DOMContentLoaded', initializePositionDropdown);
