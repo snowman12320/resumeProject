@@ -245,7 +245,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 22px 36px;
+        padding: 22px 9px 22px 36px;
         font-family: 'Inter', sans-serif;
         font-size: 24px;
         font-weight: 400;
@@ -342,6 +342,51 @@
 
       .text-start {
         text-align: start;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        border: 1px solid #7e30e1;
+        border-radius: 20px;
+        padding: 10px; 
+        width: 320px;
+        background: #ffffff80;
+      }
+
+      .search-box:focus-within {
+        border-color: #7e30e1;
+      }
+
+      .search-input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .search-input::placeholder {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.94px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+
+      .search-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #a24cd3;
+        font-size: 16px;
+      }
+
+      .search-button img {
+        width: 20px;
+        height: 20px;
       }
     </style>
   </head>
@@ -591,6 +636,20 @@
         <div class="menu-container jobCategories">
           <div class="menu-header">
             <span class="position-header"> 職務類別 </span>
+            <div class="search-box">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="自行輸入"
+              />
+              <button class="search-button">
+                <img
+                  src="./images/VectorSearch.png"
+                  width="20px"
+                  height="20px"
+                />
+              </button>
+            </div>
           </div>
           <div class="menu-flex">
             <div class="categories-container height">
