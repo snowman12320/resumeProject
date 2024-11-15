@@ -6,7 +6,6 @@ const SELECTORS = {
   dropdownButton: '.dropdown-button',
   closeButton: '.close-button',
 };
-const appendStyle = document.createElement('style');
 
 function initializeDropdown() {
   try {

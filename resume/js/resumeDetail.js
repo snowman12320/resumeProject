@@ -1,4 +1,5 @@
-function addPlaceholderStyle() {
+const appendStyle = document.createElement('style');
+(function () {
   appendStyle.textContent = `
     body{
       margin: 0;
@@ -13,5 +14,4 @@ function addPlaceholderStyle() {
     }
   `;
   document.head.appendChild(appendStyle);
-}
-addPlaceholderStyle();
+})();
