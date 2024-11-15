@@ -6,7 +6,6 @@ const POSTITON_SELECTORS = {
   dropdownButton: '.dropdown-button',
   closeButton: '.close-button',
   confirmButton: '.confirm-button',
-  positionFinalConfirm: '#positionFinalConfirm',
   clearConditions: '.clear-conditions',
   continueButton: '.continue-button',
   checkboxItem: '.checkbox-item',
@@ -20,9 +19,8 @@ function initializePositionDropdown() {
     const dropdownButton = dropdown.querySelector(POSTITON_SELECTORS.dropdownButton);
     const menuContainer = dropdown.querySelector(POSTITON_SELECTORS.menuContainer);
     const closeButtons = dropdown.querySelectorAll(POSTITON_SELECTORS.closeButton);
-    const clearConditions = dropdown.querySelector(POSTITON_SELECTORS.clearConditions);
-    const confirmButton = dropdown.querySelector(POSTITON_SELECTORS.confirmButton);
-    const positionFinalConfirm = dropdown.querySelector(POSTITON_SELECTORS.positionFinalConfirm);
+    const clearConditions = dropdown.querySelectorAll(POSTITON_SELECTORS.clearConditions);
+    const confirmButton = dropdown.querySelectorAll(POSTITON_SELECTORS.confirmButton);
     const continueButton = dropdown.querySelector(POSTITON_SELECTORS.continueButton);
     const checkboxes = dropdown.querySelectorAll(POSTITON_SELECTORS.checkboxItem);
 
@@ -35,20 +33,17 @@ function initializePositionDropdown() {
     });
 
     if (clearConditions) {
-      clearConditions.addEventListener('click', () => clearAllSelections(dropdown));
-    }
-
-    if (confirmButton) {
-      confirmButton.addEventListener('click', () => {
-        handleConfirm(dropdown);
-        toggleMenu(menuContainer, false);
+      clearConditions.forEach(button => {
+        button.addEventListener('click', () => clearPositionAllSelections(dropdown));
       });
     }
 
-    if (positionFinalConfirm) {
-      positionFinalConfirm.addEventListener('click', () => {
-        handleConfirm(dropdown);
-        toggleMenu(menuContainer, false);
+    if (confirmButton) {
+      confirmButton.forEach(button => {
+        button.addEventListener('click', () => {
+          handleConfirm(dropdown);
+          toggleMenu(menuContainer, false);
+        });
       });
     }
 
@@ -63,7 +58,9 @@ function initializePositionDropdown() {
     checkboxes.forEach(checkbox => {
       checkbox.addEventListener('change', () => {
         const isAnyChecked = Array.from(checkboxes).some(cb => cb.checked);
-        confirmButton.style.display = isAnyChecked ? 'flex' : 'none';
+        confirmButton.forEach(button => {
+          button.style.display = isAnyChecked ? 'flex' : 'none';
+        });
         positionFinalConfirm.style.display = isAnyChecked ? 'flex' : 'none';
         closeButtons.forEach(button => {
           button.style.display = isAnyChecked ? 'none' : 'flex';
@@ -101,13 +98,13 @@ function toggleMenu(menuContainer, show) {
   }
 }
 
-function clearAllSelections(dropdown) {
+function clearPositionAllSelections(dropdown) {
   dropdown.querySelectorAll(POSTITON_SELECTORS.checkboxItem).forEach(checkbox => {
     checkbox.checked = false;
   });
 
   const dropdownText = dropdown.querySelector('.dropdown-text');
-  dropdownText.textContent = '選擇地區';
+  dropdownText.textContent = '選擇職務類別';
 }
 
 function handleConfirm(dropdown) {

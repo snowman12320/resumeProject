@@ -33,7 +33,7 @@ function initializeLocationDropdown() {
     });
 
     if (clearConditions) {
-      clearConditions.addEventListener('click', () => clearAllSelections(dropdown));
+      clearConditions.addEventListener('click', () => clearLocateAllSelections(dropdown));
     }
 
     if (confirmButton) {
@@ -93,7 +93,7 @@ function toggleMenu(menuContainer, show) {
     }
 }
 
-function clearAllSelections(dropdown) {
+function clearLocateAllSelections(dropdown) {
   dropdown.querySelectorAll(LOCATE_SELECTORS.checkboxItem).forEach(checkbox => {
     checkbox.checked = false;
   });
