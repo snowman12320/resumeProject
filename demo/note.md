@@ -20,4 +20,4 @@ styleSheet.insertRule(`
   #${inputPlaceholder.id}::placeholder {
     color: #9777bccc;
   }
-`, styleSheet.cssRules.length);
+`, styleSheet.cssRules.length);  123
