@@ -23,3 +23,4 @@ document.addEventListener('click', function(event) {
         aboutMeIcon.src = './images/aboutMeIcon.png';
     }
 });
+
