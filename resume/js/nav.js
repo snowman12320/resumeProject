@@ -5,7 +5,7 @@ aboutMeIcon.addEventListener('click', function () {
   if (this.src.includes('aboutMeIconbBlue.png')) {
     this.src = './images/aboutMeIcon.png';
   } else {
-    if (!window.location.href.includes('resume')) {
+    if (window.location.href.includes('index')) {
       this.src = './images/aboutMeIconbBlue.png';
     }
   }

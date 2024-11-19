@@ -88,7 +88,7 @@ function handleCategoryClick(selectedCategory, dropdown) {
 function toggleMenu(menuContainer, show) {
   if (!menuContainer) return;
 
-  const currentDisplay = menuContainer.style.display;
+  const currentDisplay = menuContainer.style.display || 'none';
   menuContainer.style.display =
     show === undefined ? (currentDisplay === 'none' ? 'block' : 'none') : show ? 'block' : 'none';
 
