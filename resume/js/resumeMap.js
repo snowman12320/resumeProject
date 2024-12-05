@@ -16,6 +16,41 @@ const appendStyle = document.createElement('style');
         padding-top: 103px;
       }
 
+      .pointNum05 {
+        position: absolute;
+        left: 866px;
+        top: 631px;
+      }
+
+      .pointNum07 {
+        position: absolute;
+        left: 396px;
+        top: 489px;
+      }
+
+      .pointNum09 {
+        position: absolute;
+        left: 589px;
+        top: 320px;
+      }
+
+      .map-point img {
+        height: 60px;
+        width: 60px;
+        background-color: transparent;
+      }
+
+      .map-point span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -75%);
+        color: #7e30e1;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 29.05px;
+      }
+
       .zoom-control {
         display: flex;
         flex-direction: column;
@@ -66,9 +101,13 @@ const appendStyle = document.createElement('style');
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: 125px;
+        top: 100px;
         left: 50%;
         transform: translateX(-50%);
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.15);
+        width: 100%;
+        padding: 24px 0;
       }
 
       .dropdown {
@@ -182,6 +221,13 @@ const appendStyle = document.createElement('style');
         position: relative;
         top: 0;
       }
+
+      .content.height.locate {
+        height: 451px;
+        position: relative;
+        top: 0;
+      }
+
       .content.constent-left {
         justify-content: start;
         align-items: start;
@@ -205,6 +251,18 @@ const appendStyle = document.createElement('style');
       .custom-checkbox {
         position: relative;
         padding-left: 57px;
+        cursor: pointer;
+        user-select: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29.05px;
+        text-align: left;
+      }
+
+      .custom-checkbox.position {
+        position: relative;
+        padding-left: 24px;
         cursor: pointer;
         user-select: none;
         font-family: 'Inter', sans-serif;
@@ -271,10 +329,18 @@ const appendStyle = document.createElement('style');
         box-sizing: border-box;
       }
 
-      .clear-conditions {
+      .clear-conditions.locate {
         display: flex;
         align-items: center;
         cursor: pointer;
+        transform: translateX(60px);
+      }
+
+      .clear-conditions.position {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transform: translateX(20px);
       }
 
       .clear-conditions img {
@@ -389,6 +455,8 @@ const appendStyle = document.createElement('style');
         width: 20px;
         height: 20px;
       }
+      
+
   `;
   document.head.appendChild(appendStyle);
 })();
