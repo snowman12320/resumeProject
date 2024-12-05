@@ -110,6 +110,10 @@ const appendStyle = document.createElement('style');
         padding: 24px 0;
       }
 
+      .dropdown-wrap .search-icon {
+        display: none;
+      }
+
       .dropdown {
         min-width: 504px;
         max-width: 400px;
