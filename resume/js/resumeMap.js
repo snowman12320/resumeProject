@@ -1,8 +1,7 @@
 const appendStyle = document.createElement('style');
 (function () {
   appendStyle.textContent = `
- html,
-      body {
+      html,body {
         margin: 0;
         padding: 0;
         height: 100%;
@@ -104,8 +103,8 @@ const appendStyle = document.createElement('style');
         top: 100px;
         left: 50%;
         transform: translateX(-50%);
-        backdrop-filter: blur(15px);
-        background: rgba(255, 255, 255, 0.15);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9));
+        backdrop-filter: blur(3px);
         width: 100%;
         padding: 24px 0;
       }
@@ -182,7 +181,7 @@ const appendStyle = document.createElement('style');
       }
 
       .category {
-        padding: 29px 53px;
+        padding: 30px 53px;
         cursor: pointer;
         transition: background-color 0.3s;
         font-family: 'Inter', sans-serif;
@@ -190,8 +189,7 @@ const appendStyle = document.createElement('style');
         font-weight: 400;
         line-height: 29.05px;
         text-align: center;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
+        border-bottom: 1px solid #7e30e1;    
       }
 
       .category.active {
