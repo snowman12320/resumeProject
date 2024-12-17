@@ -53,13 +53,20 @@
                     <span class="button-text">預覽</span>
                   </button>
                   <button class="button-inactive">
-                    <img src="./images/material-symbols-light_save.png" class="icon-image" />
+                    <img
+                      src="./images/material-symbols-light_save.png"
+                      class="icon-image"
+                    />
                     <span class="button-text">儲存</span>
                   </button>
                 </div>
                 <div class="content-container">
                   <div class="profile-card">
-                    <img src="./images/Ellipse 2.png" alt="Profile Image" class="profile-image" />
+                    <img
+                      src="./images/Ellipse 2.png"
+                      alt="Profile Image"
+                      class="profile-image"
+                    />
                     <div>
                       <p class="profile-text">王曉明</p>
                       <p class="profile-text">30歲 175公分/68公斤</p>
@@ -69,12 +76,20 @@
                   <div class="section">
                     <div class="section-header">
                       <span class="section-title">專業證照</span>
-                      <button class="add-button toggle-button" data-target="formGroupCertificate" data-selected="selectedWrapCertificate">
+                      <button
+                        class="add-button toggle-button"
+                        data-target="formGroupCertificate"
+                        data-selected="selectedWrapCertificate"
+                      >
                         <img src="./images/ic_round-add.png" />
                         <span class="add-button-text">新增</span>
                       </button>
                     </div>
-                    <div id="formGroupCertificate" class="form-wrap" style="display: none">
+                    <div
+                      id="formGroupCertificate"
+                      class="form-wrap"
+                      style="display: none"
+                    >
                       <div class="form-group">
                         <label for="custom-dropdown" class="form-label">證照名稱</label>
                         <div id="custom-dropdown" class="dropdown-container">
@@ -107,13 +122,16 @@
                                   </div>
                                   <div class="subcategory-content">
                                     <label>
-                                      <input type="checkbox" name="photoshop" />Adobe Photoshop
+                                      <input type="checkbox" name="photoshop" />Adobe
+                                      Photoshop
                                     </label>
                                     <label>
-                                      <input type="checkbox" name="illustrator" />Adobe Illustrator
+                                      <input type="checkbox" name="illustrator" />Adobe
+                                      Illustrator
                                     </label>
                                     <label>
-                                      <input type="checkbox" name="indesign" />Adobe InDesign
+                                      <input type="checkbox" name="indesign" />Adobe
+                                      InDesign
                                     </label>
                                   </div>
                                 </div>
@@ -124,10 +142,14 @@
                                   </div>
                                   <div class="subcategory-content">
                                     <label>
-                                      <input type="checkbox" name="apple_certified" />Apple Certified
+                                      <input
+                                        type="checkbox"
+                                        name="apple_certified"
+                                      />Apple Certified
                                     </label>
                                     <label>
-                                      <input type="checkbox" name="ios_development" />iOS Development
+                                      <input type="checkbox" name="ios_development" />iOS
+                                      Development
                                     </label>
                                   </div>
                                 </div>
@@ -138,10 +160,16 @@
                                   </div>
                                   <div class="subcategory-content">
                                     <label>
-                                      <input type="checkbox" name="avaya_certified" />Avaya Certified
+                                      <input
+                                        type="checkbox"
+                                        name="avaya_certified"
+                                      />Avaya Certified
                                     </label>
                                     <label>
-                                      <input type="checkbox" name="avaya_professional" />Avaya Professional
+                                      <input
+                                        type="checkbox"
+                                        name="avaya_professional"
+                                      />Avaya Professional
                                     </label>
                                   </div>
                                 </div>
@@ -152,10 +180,12 @@
                                   </div>
                                   <div class="subcategory-content">
                                     <label>
-                                      <input type="checkbox" name="bea_weblogic" />BEA WebLogic
+                                      <input type="checkbox" name="bea_weblogic" />BEA
+                                      WebLogic
                                     </label>
                                     <label>
-                                      <input type="checkbox" name="bea_portal" />BEA Portal
+                                      <input type="checkbox" name="bea_portal" />BEA
+                                      Portal
                                     </label>
                                   </div>
                                 </div>
@@ -163,7 +193,8 @@
                             </div>
                             <div class="footer">
                               <span>清除條件<img src="./images/Vector.png" /></span>
-                              <button id="close-button" class="close-button">關閉
+                              <button id="close-button" class="close-button">
+                                關閉
                                 <img src="./images/VectorX.png" />
                               </button>
                             </div>
@@ -173,20 +204,92 @@
                       <div class="form-group">
                         <label class="form-label">其他證照</label>
                         <div class="input-icon-container">
-                          <input class="resume-input" type="text" name="other_certificates" placeholder="如找不到擁有的證照名稱，在此填寫!" />
-                          <img src="./images/VectorSubmit.png" alt="Icon" class="input-icon" />
+                          <input
+                            class="resume-input"
+                            type="text"
+                            name="other_certificates"
+                            placeholder="如找不到擁有的證照名稱，在此填寫!"
+                          />
+                          <img
+                            src="./images/VectorSubmit.png"
+                            alt="Icon"
+                            class="input-icon"
+                          />
                         </div>
                       </div>
                     </div>
                     <div id="selectedWrapCertificate" class="selected-wrap">
                       <span class="selected-item">Acrobat</span>
-                      <span class="selected-item">Photoshop</span></div>
+                      <span class="selected-item">Photoshop</span>
+                    </div>
                     <div class="section-header">
                       <span class="section-title">持有駕照</span>
-                      <button class="add-button">
+                      <button
+                        class="add-button toggle-button"
+                        data-target="formGroupLicense"
+                        data-selected="selectedWrapLicense"
+                      >
                         <img src="./images/ic_round-add.png" />
                         <span class="add-button-text">新增</span>
                       </button>
+                    </div>
+                    <div id="formGroupLicense" class="form-wrap" style="display: none">
+                      <div class="form-group">
+                        <label for="custom-dropdown-license" class="form-label">
+                          駕照名稱
+                        </label>
+                        <div id="custom-dropdown-license" class="dropdown-container">
+                          <div id="dropdown-button-license" class="dropdown-button">
+                            <span>請選擇</span>
+                            <span class="dropdown-arrow">▼</span>
+                          </div>
+                          <div id="menu-container-license" class="menu-container">
+                            <div class="menu-header">駕照類別</div>
+                            <div class="subcategories-drving-license">
+                              <label class="custom-checkbox">
+                                <input class="checkbox-item" type="checkbox" name="license-car" value="普通重型機車駕照">
+                                <span class="checkmark"></span>
+                                普通重型機車駕照
+                              </label>
+                              <label class="custom-checkbox">
+                                <input class="checkbox-item" type="checkbox" name="license-car" value="大型重型機車駕照">
+                                <span class="checkmark"></span>
+                                大型重型機車駕照
+                              </label>
+                              <label class="custom-checkbox">
+                                <input class="checkbox-item" type="checkbox" name="license-car" value="輕型機車駕照">
+                                <span class="checkmark"></span>
+                                輕型機車駕照
+                              </label>
+                              <label class="custom-checkbox">
+                                <input class="checkbox-item" type="checkbox" name="license-car" value="普通客車駕照">
+                                <span class="checkmark"></span>
+                                普通客車駕照
+                              </label>
+                              <label class="custom-checkbox">
+                                <input class="checkbox-item" type="checkbox" name="license-car" value="職業客車駕照">
+                                <span class="checkmark"></span>
+                                職業客車駕照
+                              </label>
+                              <label class="custom-checkbox">
+                                <input class="checkbox-item" type="checkbox" name="license-car" value="普通小型機車駕照">
+                                <span class="checkmark"></span>
+                                普通小型機車駕照
+                              </label>
+                            </div>
+                            <div class="footer">
+                              <span>清除條件<img src="./images/Vector.png" /></span>
+                              <button id="close-button-license" class="close-button">
+                                關閉
+                                <img src="./images/VectorX.png" />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="selectedWrapLicense" class="selected-wrap">
+                      <span class="selected-item">普通重型機車駕照</span>
                     </div>
                   </div>
                   <div class="section">
@@ -255,7 +358,10 @@
           }
         }
 
-        if (aboutMeMenu.style.display === 'none' || !aboutMeMenu.style.display) {
+        if (
+          aboutMeMenu.style.display === 'none' ||
+          !aboutMeMenu.style.display
+        ) {
           aboutMeMenu.style.display = 'block';
         } else {
           aboutMeMenu.style.display = 'none';
@@ -263,7 +369,10 @@
       });
 
       document.addEventListener('click', function (event) {
-        if (!aboutMeIcon.contains(event.target) && !aboutMeMenu.contains(event.target)) {
+        if (
+          !aboutMeIcon.contains(event.target) &&
+          !aboutMeMenu.contains(event.target)
+        ) {
           aboutMeMenu.style.display = 'none';
           aboutMeIcon.src = './images/aboutMeIcon.png';
         }
@@ -276,17 +385,24 @@
         menuContainer: '#menu-container-cerificate',
         dropdownButton: '#dropdown-button-cerificate',
         closeButton: '#close-button',
+        menuContainerLicense: '#menu-container-license',
+        dropdownButtonLicense: '#dropdown-button-license',
+        closeButtonLicense: '#close-button-license',
       };
 
       function initializeDropdown() {
         try {
           document.querySelectorAll(SELECTORS.category).forEach(category => {
-            category.addEventListener('click', () => handleCategoryClick(category));
+            category.addEventListener('click', () =>
+              handleCategoryClick(category),
+            );
           });
 
-          document.querySelectorAll(SELECTORS.subcategoryHeader).forEach(header => {
-            header.addEventListener('click', () => toggleSubcategory(header));
-          });
+          document
+            .querySelectorAll(SELECTORS.subcategoryHeader)
+            .forEach(header => {
+              header.addEventListener('click', () => toggleSubcategory(header));
+            });
 
           const menuContainer = document.querySelector(SELECTORS.menuContainer);
           document
@@ -296,11 +412,20 @@
             .querySelector(SELECTORS.dropdownButton)
             .addEventListener('click', () => toggleMenu());
 
-          document.querySelectorAll('.toggle-button').forEach(function (button) {
-            button.addEventListener('click', function () {
-              toggleAddSection(button);
+          document
+            .querySelector(SELECTORS.closeButtonLicense)
+            .addEventListener('click', () => toggleMenuLicense(false));
+          document
+            .querySelector(SELECTORS.dropdownButtonLicense)
+            .addEventListener('click', () => toggleMenuLicense());
+
+          document
+            .querySelectorAll('.toggle-button')
+            .forEach(function (button) {
+              button.addEventListener('click', function () {
+                toggleAddSection(button);
+              });
             });
-          });
         } catch (error) {
           console.error('初始化下拉選單時發生錯誤:', error);
         }
@@ -318,7 +443,9 @@
           header.style.display = isVisible ? 'block' : 'none';
 
           if (!isVisible) {
-            const subcategoryHeaders = header.querySelectorAll(SELECTORS.subcategoryHeader);
+            const subcategoryHeaders = header.querySelectorAll(
+              SELECTORS.subcategoryHeader,
+            );
             subcategoryHeaders.forEach(subHeader => {
               subHeader.nextElementSibling.style.display = 'none';
               subHeader.querySelector('span').textContent = '▼';
@@ -335,7 +462,8 @@
           content.style.display = 'none';
         }
 
-        content.style.display = content.style.display === 'none' ? 'flex' : 'none';
+        content.style.display =
+          content.style.display === 'none' ? 'flex' : 'none';
         arrow.textContent = content.style.display === 'flex' ? '▲' : '▼';
       }
 
@@ -356,12 +484,34 @@
             : 'none';
       }
 
+      function toggleMenuLicense(show) {
+        const menuContainer = document.querySelector(
+          SELECTORS.menuContainerLicense,
+        );
+        if (!menuContainer.style.display) {
+          menuContainer.style.display = 'none';
+        }
+
+        const currentDisplay = menuContainer.style.display;
+        menuContainer.style.display =
+          show === undefined
+            ? currentDisplay === 'none'
+              ? 'block'
+              : 'none'
+            : show
+            ? 'block'
+            : 'none';
+      }
+
       function toggleAddSection(button) {
         var targetId = button.getAttribute('data-target');
         var formGroup = document.getElementById(targetId);
         var selectedId = button.getAttribute('data-selected');
         var selectedWrap = document.getElementById(selectedId);
-        if (formGroup.style.display === 'none' || formGroup.style.display === '') {
+        if (
+          formGroup.style.display === 'none' ||
+          formGroup.style.display === ''
+        ) {
           formGroup.style.display = 'flex';
           selectedWrap.style.paddingLeft = '110px';
         } else {
@@ -794,6 +944,64 @@
             font-family: Inter;
             font-size: 20px;
             font-weight: 400;
+          }
+
+          .custom-checkbox {
+            position: relative;
+            padding-left: 37px;
+            cursor: pointer;
+            user-select: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 29.05px;
+            text-align: left;
+          }
+
+          .custom-checkbox.position {
+            position: relative;
+            padding-left: 24px;
+            cursor: pointer;
+            user-select: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 29.05px;
+            text-align: left;
+          }
+
+          .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+          }
+
+          .checkmark {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border: 1px solid #7e30e1;
+          }
+
+          .custom-checkbox input:checked ~ .checkmark {
+            background-color: #7e30e1;
+            border-color: #7e30e1;
+          }
+
+          .subcategories-drving-license {
+            flex: 1 1 200px;
+            overflow-y: auto;
+            min-height: 384px;
+            height: 384px;
+            overflow-x: hidden;
+            padding: 26px 61px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            row-gap: 21px;
           }
         `;
         document.head.appendChild(appendStyle);

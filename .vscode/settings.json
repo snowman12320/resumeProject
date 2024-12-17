@@ -17,7 +17,7 @@
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   // "editor.cursorStyle": "block",
-  // "editor.cursorBlinking": "expand",
+  "editor.cursorBlinking": "expand",
   "editor.inlineSuggest.showToolbar": "always",
   "editor.tokenColorCustomizations": {
       "textMateRules": [
