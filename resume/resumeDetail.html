@@ -310,7 +310,7 @@
                 <input
                   class="resume-input"
                   type="text"
-                    name="school_name"
+                  name="school_name"
                   placeholder="請輸入，例如:台灣大學"
                 />
               </div>
@@ -374,39 +374,63 @@
                 <input
                   class="resume-input"
                   type="text"
-                    name="department_name"
+                  name="department_name"
                   placeholder="請輸入，例如:資訊工程系"
                 />
               </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">就學狀態</label>
+              <div class="status-options">
+                <label class="status-option">
+                  <input type="radio" name="status" value="graduated" checked />
+                  <span class="radio-custom"></span>
+                  <span class="label">畢業</span>
+                </label>
+                <label class="status-option">
+                  <input type="radio" name="status" value="working" />
+                  <span class="radio-custom"></span>
+                  <span class="label">肄業</span>
+                </label>
+                <label class="status-option">
+                  <input type="radio" name="status" value="studying" />
+                  <span class="radio-custom"></span>
+                  <span class="label">在學中</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">就學期間</label>
+              
             </div>
           </div>
           <p class="section-note" style="display: none">
             讓企業了解你的學歷資料~
           </p>
-            <div class="section-selected">
+          <div class="section-selected">
             <div>
               <h2>國立台灣大學</h2>
               <p class="section-note">
-              <span>企業管理學系</span>
-              <span>大學畢業</span>
+                <span>企業管理學系</span>
+                <span>大學畢業</span>
               </p>
             </div>
             <div>
               <p class="section-note">2015/9-2019/9</p>
             </div>
-            </div>
-            <div class="section-selected">
+          </div>
+          <div class="section-selected">
             <div>
               <h2>國立台灣大學</h2>
               <p class="section-note">
-              <span>企業管理所</span>
-              <span>碩士夜間就讀中</span>
+                <span>企業管理所</span>
+                <span>碩士夜間就讀中</span>
               </p>
             </div>
             <div>
               <p class="section-note">2020/9-至今</p>
             </div>
-            </div>
+          </div>
         </div>
         <div class="section">
           <div class="section-header">
@@ -1185,6 +1209,59 @@
             font-weight: 400;
             line-height: 18.15px;
             color: rgba(126, 48, 225, 1);
+          }
+
+          .status-options {
+            display: flex;
+            gap: 2rem;
+            margin-left: 1rem;
+          }
+
+          .status-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+          }
+
+          .status-option input[type="radio"] {
+            display: none;
+          }
+
+          .radio-custom {
+            width: 21px;
+            height: 21px;
+            border: 2px solid #7e30e1;
+            border-radius: 50%;
+            margin-right: 8px;
+            position: relative;
+            transition: all 0.2s;
+          }
+
+          .radio-custom::after {
+            content: ''; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #7e30e1;
+            transition: transform 0.2s;
+          }
+
+          .status-option input[type="radio"]:checked + .radio-custom::after {
+            transform: translate(-52%, -48%) scale(1);
+          }
+
+          .status-option .label {
+            color: #7e30e1;
+            font-family: Inter;
+            font-size: 20px;
+            font-weight: 400;
           }
         `;
         document.head.appendChild(appendStyle);
