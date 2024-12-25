@@ -10,14 +10,441 @@
     <which-part type="threeBallBg"></which-part>
     <which-part type="breadCrumb"></which-part>
     <which-part type="sideBar"></which-part>
-    <which-part type="mainList"></which-part>
+    <!-- <which-part type="mainList"></which-part> -->
+    <main class="main-class">
+      <div class="header-buttons">
+        <button class="button-active">
+          <img src="./images/ic_round-edit.png" class="icon-image" />
+          <span class="button-text">編輯履歷</span>
+        </button>
+        <button class="button-inactive">
+          <img src="./images/icon-park-solid_eyes.png" class="icon-image" />
+          <span class="button-text">預覽</span>
+        </button>
+        <button class="button-inactive">
+          <img
+            src="./images/material-symbols-light_save.png"
+            class="icon-image"
+          />
+          <span class="button-text">儲存</span>
+        </button>
+      </div>
+      <div class="content-container">
+        <div class="profile-card">
+          <img
+            src="./images/Ellipse 2.png"
+            alt="Profile Image"
+            class="profile-image"
+          />
+          <div>
+            <p class="profile-text">王曉明</p>
+            <p class="profile-text">30歲 175公分/68公斤</p>
+            <p class="profile-text">台北市信義區</p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">專業證照</span>
+            <button
+              class="add-button toggle-button"
+              data-target="formGroupCertificate"
+              data-selected="selectedWrapCertificate"
+            >
+              <img src="./images/ic_round-add.png" />
+              <span class="add-button-text">新增</span>
+            </button>
+          </div>
+          <div
+            id="formGroupCertificate"
+            class="form-wrap"
+            style="display: none"
+          >
+            <div class="form-group">
+              <label for="custom-dropdown" class="form-label">證照名稱</label>
+              <div id="custom-dropdown" class="dropdown-container">
+                <div id="dropdown-button-cerificate" class="dropdown-button">
+                  <span>請選擇</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div id="menu-container-cerificate" class="menu-container">
+                  <div class="menu-header">證照類別</div>
+                  <div class="category-list">
+                    <div class="category-column">
+                      <div class="category active" data-category="cat1">
+                        <div>電機資訊網路類</div>
+                      </div>
+                      <div class="category" data-category="cat2">
+                        <div>營建土木類</div>
+                      </div>
+                      <div class="category">
+                        <div>財金/保險/不動產類</div>
+                      </div>
+                      <div class="category">
+                        <div>機械操作/修護類</div>
+                      </div>
+                    </div>
+                    <div class="subcategories" data-parent="cat1">
+                      <div class="subcategory-item">
+                        <div class="subcategory-header">
+                          <div>Adobe</div>
+                          <span>▼</span>
+                        </div>
+                        <div class="subcategory-content">
+                          <label>
+                            <input type="checkbox" name="photoshop" />Adobe
+                            Photoshop
+                          </label>
+                          <label>
+                            <input type="checkbox" name="illustrator" />Adobe
+                            Illustrator
+                          </label>
+                          <label>
+                            <input type="checkbox" name="indesign" />Adobe
+                            InDesign
+                          </label>
+                        </div>
+                      </div>
+                      <div class="subcategory-item">
+                        <div class="subcategory-header">
+                          <div>Apple</div>
+                          <span>▼</span>
+                        </div>
+                        <div class="subcategory-content">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="apple_certified"
+                            />Apple Certified
+                          </label>
+                          <label>
+                            <input type="checkbox" name="ios_development" />iOS
+                            Development
+                          </label>
+                        </div>
+                      </div>
+                      <div class="subcategory-item">
+                        <div class="subcategory-header">
+                          <div>Avaya Inc</div>
+                          <span>▼</span>
+                        </div>
+                        <div class="subcategory-content">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="avaya_certified"
+                            />Avaya Certified
+                          </label>
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="avaya_professional"
+                            />Avaya Professional
+                          </label>
+                        </div>
+                      </div>
+                      <div class="subcategory-item">
+                        <div class="subcategory-header">
+                          <div>BEA System</div>
+                          <span>▼</span>
+                        </div>
+                        <div class="subcategory-content">
+                          <label>
+                            <input type="checkbox" name="bea_weblogic" />BEA
+                            WebLogic
+                          </label>
+                          <label>
+                            <input type="checkbox" name="bea_portal" />BEA
+                            Portal
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <span>清除條件<img src="./images/Vector.png" /></span>
+                    <button id="close-button" class="close-button">
+                      關閉
+                      <img src="./images/VectorX.png" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">其他證照</label>
+              <div class="input-icon-container">
+                <input
+                  class="resume-input"
+                  type="text"
+                  name="other_certificates"
+                  placeholder="如找不到擁有的證照名稱，在此填寫!"
+                />
+                <img
+                  src="./images/VectorSubmit.png"
+                  alt="Icon"
+                  class="input-icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div id="selectedWrapCertificate" class="selected-wrap">
+            <span class="selected-item">Acrobat</span>
+            <span class="selected-item">Photoshop</span>
+          </div>
+          <div class="section-header">
+            <span class="section-title">持有駕照</span>
+            <button
+              class="add-button toggle-button"
+              data-target="formGroupLicense"
+              data-selected="selectedWrapLicense"
+            >
+              <img src="./images/ic_round-add.png" />
+              <span class="add-button-text">新增</span>
+            </button>
+          </div>
+          <div id="formGroupLicense" class="form-wrap" style="display: none">
+            <div class="form-group">
+              <label for="custom-dropdown-license" class="form-label">
+                駕照名稱
+              </label>
+              <div id="custom-dropdown-license" class="dropdown-container">
+                <div id="dropdown-button-license" class="dropdown-button">
+                  <span>請選擇</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div id="menu-container-license" class="menu-container">
+                  <div class="menu-header">駕照類別</div>
+                  <div class="subcategories-drving-license">
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="license-car"
+                        value="普通重型機車駕照"
+                      />
+                      <span class="checkmark"></span>
+                      普通重型機車駕照
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="license-car"
+                        value="大型重型機車駕照"
+                      />
+                      <span class="checkmark"></span>
+                      大型重型機車駕照
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="license-car"
+                        value="輕型機車駕照"
+                      />
+                      <span class="checkmark"></span>
+                      輕型機車駕照
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="license-car"
+                        value="普通客車駕照"
+                      />
+                      <span class="checkmark"></span>
+                      普通客車駕照
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="license-car"
+                        value="職業客車駕照"
+                      />
+                      <span class="checkmark"></span>
+                      職業客車駕照
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="license-car"
+                        value="普通小型機車駕照"
+                      />
+                      <span class="checkmark"></span>
+                      普通小型機車駕照
+                    </label>
+                  </div>
+                  <div class="footer">
+                    <span>清除條件<img src="./images/Vector.png" /></span>
+                    <button id="close-button-license" class="close-button">
+                      關閉
+                      <img src="./images/VectorX.png" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="selectedWrapLicense" class="selected-wrap">
+            <span class="selected-item">普通重型機車駕照</span>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">學歷</span>
+            <button
+              class="add-button toggle-button"
+              data-target="formGroupEducation"
+              data-selected="selectedWrapEducation"
+            >
+              <img src="./images/ic_round-add.png" />
+              <span class="add-button-text">新增</span>
+            </button>
+          </div>
+          <div id="formGroupEducation" class="form-wrap" style="display: none">
+            <div class="form-group">
+              <label class="form-label">學校名稱</label>
+              <div class="input-icon-container">
+                <input
+                  class="resume-input"
+                  type="text"
+                    name="school_name"
+                  placeholder="請輸入，例如:台灣大學"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="custom-dropdown-education" class="form-label"
+                >學歷</label
+              >
+              <div id="custom-dropdown-education" class="dropdown-container">
+                <div id="dropdown-button-education" class="dropdown-button">
+                  <span>請選擇</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div id="menu-container-education" class="menu-container">
+                  <div class="menu-header">學歷類別</div>
+                  <div class="subcategories-drving-license">
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="education"
+                        value="高中畢業"
+                      />
+                      <span class="checkmark"></span>
+                      高中畢業
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="education"
+                        value="大學畢業"
+                      />
+                      <span class="checkmark"></span>
+                      大學畢業
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkbox-item"
+                        type="checkbox"
+                        name="education"
+                        value="碩士畢業"
+                      />
+                      <span class="checkmark"></span>
+                      碩士畢業
+                    </label>
+                  </div>
+                  <div class="footer">
+                    <span>清除條件<img src="./images/Vector.png" /></span>
+                    <button id="close-button-education" class="close-button">
+                      關閉
+                      <img src="./images/VectorX.png" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">科系名稱</label>
+              <div class="input-icon-container">
+                <input
+                  class="resume-input"
+                  type="text"
+                    name="department_name"
+                  placeholder="請輸入，例如:資訊工程系"
+                />
+              </div>
+            </div>
+          </div>
+          <p class="section-note" style="display: none">
+            讓企業了解你的學歷資料~
+          </p>
+            <div class="section-selected">
+            <div>
+              <h2>國立台灣大學</h2>
+              <p class="section-note">
+              <span>企業管理學系</span>
+              <span>大學畢業</span>
+              </p>
+            </div>
+            <div>
+              <p class="section-note">2015/9-2019/9</p>
+            </div>
+            </div>
+            <div class="section-selected">
+            <div>
+              <h2>國立台灣大學</h2>
+              <p class="section-note">
+              <span>企業管理所</span>
+              <span>碩士夜間就讀中</span>
+              </p>
+            </div>
+            <div>
+              <p class="section-note">2020/9-至今</p>
+            </div>
+            </div>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">經歷</span>
+            <button class="add-button">
+              <img src="./images/ic_round-add.png" />
+              <span class="add-button-text">新增</span>
+            </button>
+          </div>
+          <p class="section-note">分享你的工作經歷，讓企業看見~</p>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">應徵屬性</span>
+            <button class="add-button">
+              <img src="./images/ic_round-add.png" />
+              <span class="add-button-text">新增</span>
+            </button>
+          </div>
+          <p class="section-note">填上你想應徵的產業與職務名稱</p>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">期望條件</span>
+            <button class="add-button">
+              <img src="./images/ic_round-add.png" />
+              <span class="add-button-text">新增</span>
+            </button>
+          </div>
+          <p class="section-note">填上你期望的薪資區段、上班時段</p>
+        </div>
+      </div>
+    </main>
     <which-part type="footer"></which-part>
 
     <script>
-      class WhichPart extends HTMLElement 
-      {
-        connectedCallback() 
-        {
+      class WhichPart extends HTMLElement {
+        connectedCallback() {
           var choice = this.getAttribute('type');
           switch (choice) {
             case 'nav':
@@ -42,298 +469,6 @@
               break;
             case 'mainList':
               this.innerHTML = `
-              <main class="main-class">
-                <div class="header-buttons">
-                  <button class="button-active">
-                    <img src="./images/ic_round-edit.png" class="icon-image" />
-                    <span class="button-text">編輯履歷</span>
-                  </button>
-                  <button class="button-inactive">
-                    <img src="./images/icon-park-solid_eyes.png" class="icon-image" />
-                    <span class="button-text">預覽</span>
-                  </button>
-                  <button class="button-inactive">
-                    <img
-                      src="./images/material-symbols-light_save.png"
-                      class="icon-image"
-                    />
-                    <span class="button-text">儲存</span>
-                  </button>
-                </div>
-                <div class="content-container">
-                  <div class="profile-card">
-                    <img
-                      src="./images/Ellipse 2.png"
-                      alt="Profile Image"
-                      class="profile-image"
-                    />
-                    <div>
-                      <p class="profile-text">王曉明</p>
-                      <p class="profile-text">30歲 175公分/68公斤</p>
-                      <p class="profile-text">台北市信義區</p>
-                    </div>
-                  </div>
-                  <div class="section">
-                    <div class="section-header">
-                      <span class="section-title">專業證照</span>
-                      <button
-                        class="add-button toggle-button"
-                        data-target="formGroupCertificate"
-                        data-selected="selectedWrapCertificate"
-                      >
-                        <img src="./images/ic_round-add.png" />
-                        <span class="add-button-text">新增</span>
-                      </button>
-                    </div>
-                    <div
-                      id="formGroupCertificate"
-                      class="form-wrap"
-                      style="display: none"
-                    >
-                      <div class="form-group">
-                        <label for="custom-dropdown" class="form-label">證照名稱</label>
-                        <div id="custom-dropdown" class="dropdown-container">
-                          <div id="dropdown-button-cerificate" class="dropdown-button">
-                            <span>請選擇</span>
-                            <span class="dropdown-arrow">▼</span>
-                          </div>
-                          <div id="menu-container-cerificate" class="menu-container">
-                            <div class="menu-header">證照類別</div>
-                            <div class="category-list">
-                              <div class="category-column">
-                                <div class="category active" data-category="cat1">
-                                  <div>電機資訊網路類</div>
-                                </div>
-                                <div class="category" data-category="cat2">
-                                  <div>營建土木類</div>
-                                </div>
-                                <div class="category">
-                                  <div>財金/保險/不動產類</div>
-                                </div>
-                                <div class="category">
-                                  <div>機械操作/修護類</div>
-                                </div>
-                              </div>
-                              <div class="subcategories" data-parent="cat1">
-                                <div class="subcategory-item">
-                                  <div class="subcategory-header">
-                                    <div>Adobe</div>
-                                    <span>▼</span>
-                                  </div>
-                                  <div class="subcategory-content">
-                                    <label>
-                                      <input type="checkbox" name="photoshop" />Adobe
-                                      Photoshop
-                                    </label>
-                                    <label>
-                                      <input type="checkbox" name="illustrator" />Adobe
-                                      Illustrator
-                                    </label>
-                                    <label>
-                                      <input type="checkbox" name="indesign" />Adobe
-                                      InDesign
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="subcategory-item">
-                                  <div class="subcategory-header">
-                                    <div>Apple</div>
-                                    <span>▼</span>
-                                  </div>
-                                  <div class="subcategory-content">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="apple_certified"
-                                      />Apple Certified
-                                    </label>
-                                    <label>
-                                      <input type="checkbox" name="ios_development" />iOS
-                                      Development
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="subcategory-item">
-                                  <div class="subcategory-header">
-                                    <div>Avaya Inc</div>
-                                    <span>▼</span>
-                                  </div>
-                                  <div class="subcategory-content">
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="avaya_certified"
-                                      />Avaya Certified
-                                    </label>
-                                    <label>
-                                      <input
-                                        type="checkbox"
-                                        name="avaya_professional"
-                                      />Avaya Professional
-                                    </label>
-                                  </div>
-                                </div>
-                                <div class="subcategory-item">
-                                  <div class="subcategory-header">
-                                    <div>BEA System</div>
-                                    <span>▼</span>
-                                  </div>
-                                  <div class="subcategory-content">
-                                    <label>
-                                      <input type="checkbox" name="bea_weblogic" />BEA
-                                      WebLogic
-                                    </label>
-                                    <label>
-                                      <input type="checkbox" name="bea_portal" />BEA
-                                      Portal
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="footer">
-                              <span>清除條件<img src="./images/Vector.png" /></span>
-                              <button id="close-button" class="close-button">
-                                關閉
-                                <img src="./images/VectorX.png" />
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label">其他證照</label>
-                        <div class="input-icon-container">
-                          <input
-                            class="resume-input"
-                            type="text"
-                            name="other_certificates"
-                            placeholder="如找不到擁有的證照名稱，在此填寫!"
-                          />
-                          <img
-                            src="./images/VectorSubmit.png"
-                            alt="Icon"
-                            class="input-icon"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div id="selectedWrapCertificate" class="selected-wrap">
-                      <span class="selected-item">Acrobat</span>
-                      <span class="selected-item">Photoshop</span>
-                    </div>
-                    <div class="section-header">
-                      <span class="section-title">持有駕照</span>
-                      <button
-                        class="add-button toggle-button"
-                        data-target="formGroupLicense"
-                        data-selected="selectedWrapLicense"
-                      >
-                        <img src="./images/ic_round-add.png" />
-                        <span class="add-button-text">新增</span>
-                      </button>
-                    </div>
-                    <div id="formGroupLicense" class="form-wrap" style="display: none">
-                      <div class="form-group">
-                        <label for="custom-dropdown-license" class="form-label">
-                          駕照名稱
-                        </label>
-                        <div id="custom-dropdown-license" class="dropdown-container">
-                          <div id="dropdown-button-license" class="dropdown-button">
-                            <span>請選擇</span>
-                            <span class="dropdown-arrow">▼</span>
-                          </div>
-                          <div id="menu-container-license" class="menu-container">
-                            <div class="menu-header">駕照類別</div>
-                            <div class="subcategories-drving-license">
-                              <label class="custom-checkbox">
-                                <input class="checkbox-item" type="checkbox" name="license-car" value="普通重型機車駕照">
-                                <span class="checkmark"></span>
-                                普通重型機車駕照
-                              </label>
-                              <label class="custom-checkbox">
-                                <input class="checkbox-item" type="checkbox" name="license-car" value="大型重型機車駕照">
-                                <span class="checkmark"></span>
-                                大型重型機車駕照
-                              </label>
-                              <label class="custom-checkbox">
-                                <input class="checkbox-item" type="checkbox" name="license-car" value="輕型機車駕照">
-                                <span class="checkmark"></span>
-                                輕型機車駕照
-                              </label>
-                              <label class="custom-checkbox">
-                                <input class="checkbox-item" type="checkbox" name="license-car" value="普通客車駕照">
-                                <span class="checkmark"></span>
-                                普通客車駕照
-                              </label>
-                              <label class="custom-checkbox">
-                                <input class="checkbox-item" type="checkbox" name="license-car" value="職業客車駕照">
-                                <span class="checkmark"></span>
-                                職業客車駕照
-                              </label>
-                              <label class="custom-checkbox">
-                                <input class="checkbox-item" type="checkbox" name="license-car" value="普通小型機車駕照">
-                                <span class="checkmark"></span>
-                                普通小型機車駕照
-                              </label>
-                            </div>
-                            <div class="footer">
-                              <span>清除條件<img src="./images/Vector.png" /></span>
-                              <button id="close-button-license" class="close-button">
-                                關閉
-                                <img src="./images/VectorX.png" />
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="selectedWrapLicense" class="selected-wrap">
-                      <span class="selected-item">普通重型機車駕照</span>
-                    </div>
-                  </div>
-                  <div class="section">
-                    <div class="section-header">
-                      <span class="section-title">學歷</span>
-                      <button class="add-button">
-                        <img src="./images/ic_round-add.png" />
-                        <span class="add-button-text">新增</span>
-                      </button>
-                    </div>
-                    <p class="section-note">讓企業了解你的學歷資料~</p>
-                  </div>
-                  <div class="section">
-                    <div class="section-header">
-                      <span class="section-title">經歷</span>
-                      <button class="add-button">
-                        <img src="./images/ic_round-add.png" />
-                        <span class="add-button-text">新增</span>
-                      </button>
-                    </div>
-                    <p class="section-note">分享你的工作經歷，讓企業看見~</p>
-                  </div>
-                  <div class="section">
-                    <div class="section-header">
-                      <span class="section-title">應徵屬性</span>
-                      <button class="add-button">
-                        <img src="./images/ic_round-add.png" />
-                        <span class="add-button-text">新增</span>
-                      </button>
-                    </div>
-                    <p class="section-note">填上你想應徵的產業與職務名稱</p>
-                  </div>
-                  <div class="section">
-                    <div class="section-header">
-                      <span class="section-title">期望條件</span>
-                      <button class="add-button">
-                        <img src="./images/ic_round-add.png" />
-                        <span class="add-button-text">新增</span>
-                      </button>
-                    </div>
-                    <p class="section-note">填上你期望的薪資區段、上班時段</p>
-                  </div>
-                </div>
-              </main>
               `;
               break;
             case 'footer':
@@ -426,6 +561,13 @@
                 toggleAddSection(button);
               });
             });
+
+          document
+            .querySelector('#close-button-education')
+            .addEventListener('click', () => toggleMenuEducation(false));
+          document
+            .querySelector('#dropdown-button-education')
+            .addEventListener('click', () => toggleMenuEducation());
         } catch (error) {
           console.error('初始化下拉選單時發生錯誤:', error);
         }
@@ -503,6 +645,25 @@
             : 'none';
       }
 
+      function toggleMenuEducation(show) {
+        const menuContainer = document.querySelector(
+          '#menu-container-education',
+        );
+        if (!menuContainer.style.display) {
+          menuContainer.style.display = 'none';
+        }
+
+        const currentDisplay = menuContainer.style.display;
+        menuContainer.style.display =
+          show === undefined
+            ? currentDisplay === 'none'
+              ? 'block'
+              : 'none'
+            : show
+            ? 'block'
+            : 'none';
+      }
+
       function toggleAddSection(button) {
         var targetId = button.getAttribute('data-target');
         var formGroup = document.getElementById(targetId);
@@ -513,10 +674,10 @@
           formGroup.style.display === ''
         ) {
           formGroup.style.display = 'flex';
-          selectedWrap.style.paddingLeft = '110px';
+          selectedWrap ? (selectedWrap.style.paddingLeft = '110px') : null;
         } else {
           formGroup.style.display = 'none';
-          selectedWrap.style.paddingLeft = '0';
+          selectedWrap ? (selectedWrap.style.paddingLeft = '0') : null;
         }
       }
       document.addEventListener('DOMContentLoaded', initializeDropdown);
@@ -587,7 +748,7 @@
             font-family: Inter;
             font-size: 24px;
             font-weight: 400;
-            line-height: 29.05px;
+            line-height: 29.05px; 
             text-align: left;
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
@@ -891,7 +1052,7 @@
           .resume-input {
             border: 1px solid #7e30e1;
             border-radius: 10px;
-            padding: 19px 11px;
+            padding: 19px 11px; 
             font-size: 16px;
             width: 100%;
             box-sizing: border-box;
@@ -1002,6 +1163,28 @@
             display: flex;
             flex-direction: column;
             row-gap: 21px;
+          }
+
+          .section-selected{
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+          }
+
+          .section-selected h2{
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24.2px;
+            color: rgba(126, 48, 225, 1);
+            margin-bottom: 5px;
+            margin-top: 0px;
+          }
+
+          .section-selected p{
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18.15px;
+            color: rgba(126, 48, 225, 1);
           }
         `;
         document.head.appendChild(appendStyle);
