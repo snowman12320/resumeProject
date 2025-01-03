@@ -507,12 +507,227 @@
                   <div class="section">
                     <div class="section-header">
                       <span class="section-title">經歷</span>
-                      <button class="add-button">
+                      <button
+                        class="add-button toggle-button"
+                        data-target="formGroupExperience"
+                        data-selected="selectedWrapExperience"
+                      >
                         <img src="./images/ic_round-add.png" />
                         <span class="add-button-text">新增</span>
                       </button>
                     </div>
-                    <p class="section-note">分享你的工作經歷，讓企業看見~</p>
+                    <div id="formGroupExperience" class="form-wrap" style="display: none">
+                      <div class="form-group">
+                        <label class="form-label">公司名稱</label>
+                        <div class="input-icon-container">
+                          <input
+                            class="resume-input"
+                            type="text"
+                            name="company_name"
+                            placeholder="請填寫"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">職務名稱</label>
+                        <div class="input-icon-container">
+                          <input
+                            class="resume-input"
+                            type="text"
+                            name="job_title"
+                            placeholder="請填寫，例如軟體工程師"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="job-category" class="form-label">職務類別</label>
+                        <div style="display: flex; width: 100%; column-gap: 12px">
+                          <div
+                            id="custom-dropdown-job-category1"
+                            class="dropdown-container"
+                            style="width: 173px"
+                          >
+                            <div
+                              id="dropdown-button-job-category1"
+                              class="dropdown-button"
+                            >
+                              <span>請選擇</span>
+                              <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div id="menu-container-job-category1" class="menu-container">
+                              <div class="menu-header">職務類別</div>
+                              <div class="subcategories-drving-license">
+                                <label class="custom-checkbox">
+                                  <input
+                                    class="checkbox-item"
+                                    type="checkbox"
+                                    name="job-category"
+                                    value="全職"
+                                  />
+                                  <span class="checkmark"></span>
+                                  全職
+                                </label>
+                                <label class="custom-checkbox">
+                                  <input
+                                    class="checkbox-item"
+                                    type="checkbox"
+                                    name="job-category"
+                                    value="兼職"
+                                  />
+                                  <span class="checkmark"></span>
+                                  兼職
+                                </label>
+                              </div>
+                              <div class="footer">
+                                <span>清除條件<img src="./images/Vector.png" /></span>
+                                <button
+                                  id="close-button-job-category1"
+                                  class="close-button"
+                                >
+                                  關閉
+                                  <img src="./images/VectorX.png" />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            id="custom-dropdown-job-category2"
+                            class="dropdown-container"
+                          >
+                            <div
+                              id="dropdown-button-job-category2"
+                              class="dropdown-button"
+                            >
+                              <span>請選擇</span>
+                              <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div id="menu-container-job-category2" class="menu-container">
+                              <div class="menu-header">職務類別</div>
+                              <div class="subcategories-drving-license">
+                                <label class="custom-checkbox">
+                                  <input
+                                    class="checkbox-item"
+                                    type="checkbox"
+                                    name="job-category"
+                                    value="資訊業"
+                                  />
+                                  <span class="checkmark"></span>
+                                  資訊業
+                                </label>
+                                <label class="custom-checkbox">
+                                  <input
+                                    class="checkbox-item"
+                                    type="checkbox"
+                                    name="job-category"
+                                    value="金融業"
+                                  />
+                                  <span class="checkmark"></span>
+                                  金融業
+                                </label>
+                              </div>
+                              <div class="footer">
+                                <span>清除條件<img src="./images/Vector.png" /></span>
+                                <button
+                                  id="close-button-job-category2"
+                                  class="close-button"
+                                >
+                                  關閉
+                                  <img src="./images/VectorX.png" />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">任職期間</label>
+                        <div class="date-range-container">
+                          <div class="date-picker">
+                            <div class="dropdown-container date-dropdown">
+                              <div class="dropdown-button">
+                                <span class="placeholder">開始年份</span>
+                                <span class="dropdown-arrow">▼</span>
+                              </div>
+                              <select class="date-select" id="startYearExperience">
+                                <option disabled value="">開始年份</option>
+                              </select>
+                            </div>
+                            <div class="dropdown-container date-dropdown">
+                              <div class="dropdown-button">
+                                <span class="placeholder">開始月份</span>
+                                <span class="dropdown-arrow">▼</span>
+                              </div>
+                              <select class="date-select" id="startMonthExperience">
+                                <option disabled value="">開始月份</option>
+                              </select>
+                            </div>
+                            <span class="date-separator">~</span>
+                            <div class="dropdown-container date-dropdown">
+                              <div class="dropdown-button">
+                                <span class="placeholder">結束年份</span>
+                                <span class="dropdown-arrow">▼</span>
+                              </div>
+                              <select class="date-select" id="endYearExperience">
+                                <option disabled value="">結束年份</option>
+                              </select>
+                            </div>
+                            <div class="dropdown-container date-dropdown">
+                              <div class="dropdown-button">
+                                <span class="placeholder">結束月份</span>
+                                <span class="dropdown-arrow">▼</span>
+                              </div>
+                              <select class="date-select" id="endMonthExperience">
+                                <option disabled value="">結束月份</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group" style="justify-content: end">
+                        <div class="status-options">
+                          <label class="status-option">
+                            <input
+                              type="checkbox"
+                              name="employment_status"
+                              value="employed"
+                            />
+                            <span class="radio-custom"></span>
+                            <span class="label">仍在職</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="section-note" style="display: none">
+                      分享你的工作經歷，讓企業看見~
+                    </p>
+                    <p class="totalExperience">
+                      <img src="./images/grommet-icons_money.png" />
+                      <span>總年資4年</span>
+                    </p>
+                    <div class="section-selected">
+                      <div>
+                        <h2>聯華電子</h2>
+                        <p class="section-note">
+                          <span>專案經理</span>
+                          <span>3年</span>
+                        </p>
+                      </div>
+                      <div>
+                        <p class="section-note">2021/9-2024/9</p>
+                      </div>
+                    </div>
+                    <div class="section-selected">
+                      <div>
+                        <h2>友達光電</h2>
+                        <p class="section-note">
+                          <span>專案經理</span>
+                          <span>1年</span>
+                        </p>
+                      </div>
+                      <div>
+                        <p class="section-note">2020/9-2021/9</p>
+                      </div>
+                    </div>
                   </div>
                   <div class="section">
                     <div class="section-header">
@@ -636,7 +851,29 @@
             .querySelector('#dropdown-button-education')
             .addEventListener('click', () => toggleMenuEducation());
 
+          document
+            .querySelector('#close-button-job-category1')
+            .addEventListener('click', () =>
+              toggleMenuExperience(false, 'job-category1'),
+            );
+          document
+            .querySelector('#dropdown-button-job-category1')
+            .addEventListener('click', () =>
+              toggleMenuExperience(undefined, 'job-category1'),
+            );
+          document
+            .querySelector('#close-button-job-category2')
+            .addEventListener('click', () =>
+              toggleMenuExperience(false, 'job-category2'),
+            );
+          document
+            .querySelector('#dropdown-button-job-category2')
+            .addEventListener('click', () =>
+              toggleMenuExperience(undefined, 'job-category2'),
+            );
+
           initializeDatePickers();
+          initializeDatePickersExperience();
         } catch (error) {
           console.error('初始化下拉選單時發生錯誤:', error);
         }
@@ -733,6 +970,25 @@
             : 'none';
       }
 
+      function toggleMenuExperience(show, category) {
+        const menuContainer = document.querySelector(
+          `#menu-container-${category}`,
+        );
+        if (!menuContainer.style.display) {
+          menuContainer.style.display = 'none';
+        }
+
+        const currentDisplay = menuContainer.style.display;
+        menuContainer.style.display =
+          show === undefined
+            ? currentDisplay === 'none'
+              ? 'block'
+              : 'none'
+            : show
+            ? 'block'
+            : 'none';
+      }
+
       function toggleAddSection(button) {
         var targetId = button.getAttribute('data-target');
         var formGroup = document.getElementById(targetId);
@@ -755,6 +1011,40 @@
         const endYear = document.getElementById('endYear');
         const startMonth = document.getElementById('startMonth');
         const endMonth = document.getElementById('endMonth');
+
+        const currentYear = new Date().getFullYear();
+        for (let year = currentYear - 50; year <= currentYear + 1; year++) {
+          [startYear, endYear].forEach(select => {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            select.appendChild(option);
+          });
+        }
+
+        for (let month = 1; month <= 12; month++) {
+          [startMonth, endMonth].forEach(select => {
+            const option = document.createElement('option');
+            option.value = month;
+            option.textContent = month;
+            select.appendChild(option);
+          });
+        }
+
+        [startYear, endYear, startMonth, endMonth].forEach(select => {
+          select.addEventListener('change', function (e) {
+            const placeholder =
+              this.parentElement.querySelector('.placeholder');
+            placeholder.textContent =
+              e.target.value || (this.id.includes('Year') ? '年' : '月');
+          });
+        });
+      }
+      function initializeDatePickersExperience() {
+        const startYear = document.getElementById('startYearExperience');
+        const endYear = document.getElementById('endYearExperience');
+        const startMonth = document.getElementById('startMonthExperience');
+        const endMonth = document.getElementById('endMonthExperience');
 
         const currentYear = new Date().getFullYear();
         for (let year = currentYear - 50; year <= currentYear + 1; year++) {
@@ -1179,6 +1469,8 @@
             text-decoration-skip-ink: none;
             color: #7e30e1;
             margin: 0;
+            display:flex;
+            column-gap:16px;
           }
 
           .input-icon-container {
@@ -1313,6 +1605,9 @@
           .status-option input[type="radio"] {
             display: none;
           }
+          .status-option input[type="checkbox"] {
+            display: none;
+          }
 
           .radio-custom {
             width: 21px;
@@ -1337,7 +1632,10 @@
             transition: transform 0.2s;
           }
 
-          .status-option input[type="radio"]:checked + .radio-custom::after {
+          .status-option input[type="radio"]:checked + .radio-custom::after { 
+            transform: translate(-52%, -48%) scale(1);
+          }
+          .status-option input[type="checkbox"]:checked + .radio-custom::after {
             transform: translate(-52%, -48%) scale(1);
           }
 
@@ -1393,6 +1691,26 @@
           .placeholder {
             color: #9777bccc;
             padding-left: 15px !important;
+          }
+
+          .totalExperience{
+            font-family: Inter;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 18.15px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color:rgba(126, 48, 225, 1);
+            display:flex;
+            column-gap:8px;
+            padding:0px; 
+            margin: -20px 0 -5px 0; 
+          }
+
+          .totalExperience img{
+            width: 20px;
+            height: 20px; 
           }
         `;
         document.head.appendChild(appendStyle);
